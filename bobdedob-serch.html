@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>bobdedob serch</title>
+        <style>
+            body {
+                background: black;
+            }
+            
+            h1 {
+                color: red;
+            }
+            
+            div {
+                background: silver;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>bobdedob serch M1</h1>
+        <div>
+            <h1>👌😑😎</h1>
+        </div>
+        <a href="https://zzzcode.ai">
+            <button>free code generator!</button>
+        </a>
+        <p>
+        </p>
+        <form action="https://www.google.com/search" method="GET">
+            <input type="text" name="q" placeholder="Enter your query">
+            <button type="submit">Search</button>
+        </form>
+        <div id="result"></div>
+
+<script>
+  function searchGoogle() {
+    var query = document.getElementById("query").value;
+    var url = "https://www.googleapis.com/customsearch/v1?key=YOUR_API_KEY&cx=YOUR_CX&q=" + query;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        var response = JSON.parse(xhr.responseText);
+        var answer = response.items[0].snippet;
+        document.getElementById("result").innerHTML = answer;
+      }
+    };
+    xhr.send();
+  }
+</script>
+
+<input type="text" id="query" placeholder="Enter your query">
+<button onclick="searchGoogle()">Search</button>
+        <script async src="https://cse.google.com/cse.js?cx=YOUR_CX"></script>
+<div class="gcse-search"></div>
+      <style>
+        h1 {
+          font-family: impact;
+        }
+      </style>
+    </body>
+</html>
